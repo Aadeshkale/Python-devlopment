@@ -1,0 +1,26 @@
+1.Requred packages
+
+	pip install requests
+	pip install beautifulsoup4 
+
+2.Make requests to get the perticular page html code
+	
+	example,
+	
+	import requests
+	from bs4 import Beautifulsoup
+	
+	res=requests.get('https://aadesh.pythonanywhere.com/myapp/											display')
+3.Conver that page object into text format
+
+	print(res.text)
+
+4.generate Beautifulsoup object from that res.text and start Scriping
+
+	html=Beautifulsoup(res.text,'html.parser')
+
+5.Example,Scriping a perticular tag data
+
+	html.select('title')	# accessing title content in the form 					# of list
+
+	print(title[0].getText())  # accesing the data with tag 						      # and converting it to text	
